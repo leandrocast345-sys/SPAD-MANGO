@@ -276,7 +276,7 @@ class SPADApp: ## Clase principal de la aplicación SPAD Pro, que maneja la inte
             return   # ya tenemos todas
 
         self.analizando = True
-        self.btn_cap.config(state="disabled", text="⏳  Procesando…", fg=TEXT_DIM)
+        self.btn_cap.config(state="disabled", text="Procesando…", fg=TEXT_DIM)
 
         def _run(): ## Función interna que se ejecuta en un hilo separado para procesar la captura de la zona de la hoja, evitando que la interfaz gráfica se congele durante el análisis.
             frame = self.frame_actual.copy()
@@ -311,10 +311,10 @@ class SPADApp: ## Clase principal de la aplicación SPAD Pro, que maneja la inte
             if len(self.capturas) == NUM_CAPTURAS:
                 self._calcular_promedio()
                 self.btn_cap.config(state="disabled",
-                                    text="✓  5 zonas completadas", fg=TEXT_SEC)
+                                    text="5 zonas completadas", fg=TEXT_SEC)
             else:
                 self.btn_cap.config(state="normal",
-                                    text=f"📷  CAPTURAR ZONA  ({idx+1}/{NUM_CAPTURAS})",
+                                    text=f"CAPTURAR ZONA  ({idx+1}/{NUM_CAPTURAS})",
                                     fg=ACCENT)
             self.analizando = False
 
