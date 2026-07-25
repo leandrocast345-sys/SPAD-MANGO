@@ -107,38 +107,38 @@ spad_pro/
 
 | Ítem | Detalle |
 |---|---|
-| Sistema operativo | Ubuntu 24.04.4 LTS (Noble Numbat) |
-| Lenguaje | Python 3.12.3 |
-| Interfaz gráfica | Tkinter (Tcl/Tk 8.6) |
+| Sistema operativo | Windows 10 / 11 *(ajusta según tu equipo)* |
+| Editor / IDE | Visual Studio Code |
+| Lenguaje | Python *(ver versión exacta abajo)* |
+| Interfaz gráfica | Tkinter (Tcl/Tk 8.6, incluido con Python) |
 | Gestor de paquetes | pip |
 
-> **Nota:** estas son las versiones con las que se verificó que el proyecto
-> importa y ejecuta correctamente tras la segmentación en módulos. Si el
-> proyecto se desarrolló originalmente en otro sistema operativo (por
-> ejemplo, Windows, donde suele probarse con cámaras IP tipo DroidCam/IP
-> Webcam), te recomendamos ajustar esta tabla con los datos reales de tu
-> equipo de desarrollo. Puedes obtenerlos ejecutando:
-> ```bash
+> **Cómo obtener tus datos exactos:** abre la terminal integrada de VS Code
+> (`Ctrl + ñ` o menú *Terminal → Nueva Terminal*) y ejecuta:
+> ```powershell
 > python --version
-> pip show opencv-python-headless pillow numpy
+> pip show opencv-python
+> pip show pillow
+> pip show numpy
 > ```
+> Reemplaza los valores de esta tabla y de la sección 8 con lo que te
+> devuelvan esos comandos.
 
 ## 8. Versiones de los paquetes utilizados
 
-| Paquete | Versión verificada | Uso en el proyecto |
+| Paquete | Versión | Uso en el proyecto |
 |---|---|---|
-| [opencv-python](https://pypi.org/project/opencv-python/) (`cv2`) | 4.13.0 | Captura de video, conversión de color BGR↔HSV↔RGB, segmentación por máscaras, dibujo de recuadros/texto sobre los frames |
-| [Pillow](https://pypi.org/project/Pillow/) (`PIL`) | 12.1.1 | Conversión de arrays de imagen (NumPy/OpenCV) a un formato compatible con Tkinter (`ImageTk.PhotoImage`) |
-| [NumPy](https://pypi.org/project/numpy/) | 2.4.4 | Operaciones con arrays, cálculo de promedios y desviación estándar de los valores SPAD |
+| [opencv-python](https://pypi.org/project/opencv-python/) (`cv2`) | *(completar)* | Captura de video, conversión de color BGR↔HSV↔RGB, segmentación por máscaras, dibujo de recuadros/texto sobre los frames |
+| [Pillow](https://pypi.org/project/Pillow/) (`PIL`) | *(completar)* | Conversión de arrays de imagen (NumPy/OpenCV) a un formato compatible con Tkinter (`ImageTk.PhotoImage`) |
+| [NumPy](https://pypi.org/project/numpy/) | *(completar)* | Operaciones con arrays, cálculo de promedios y desviación estándar de los valores SPAD |
 | `tkinter` | Tcl/Tk 8.6 (incluido en Python) | Interfaz gráfica de escritorio |
 | `threading` | Módulo estándar de Python | Ejecutar el streaming de video y el análisis de imagen sin bloquear la UI |
 | `time` | Módulo estándar de Python | Pausas cortas al reintentar conexión con la cámara |
 
-> Se usó `opencv-python-headless` en el entorno de pruebas (sin dependencias
-> gráficas del sistema) porque Tkinter ya se encarga de mostrar las
-> imágenes. Si en tu máquina de desarrollo instalaste `opencv-python`
-> (versión estándar) en su lugar, ambas exponen el mismo módulo `cv2` y son
-> intercambiables para este proyecto.
+Completa la columna "Versión" con el resultado de `pip show` (sección 7).
+En Windows normalmente instalarás `opencv-python` (versión estándar, con
+soporte de GUI) — es el paquete correcto para este proyecto, ya que la
+visualización de imágenes la maneja Tkinter.
 
 Puedes generar un `requirements.txt` fiel a tu propio entorno con:
 ```bash
