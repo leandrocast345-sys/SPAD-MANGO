@@ -1,4 +1,13 @@
 # SPAD Pro — Analizador de Clorofila Multi-Zona
+Integrantes : 
+
+## Castillo Castillo Leandro Said
+## Ramirez Rosado Robert Anthony
+## Viera Hidalgo Gabriel David
+## Castillo sullon elmer joel
+## Ramírez ipanaque Alfredo Aldair
+## Trelles Flores Néstor Ivan
+## Peña Jimenez Esthy kobel
 
 ## Descripción general
 
